@@ -42,6 +42,13 @@ fn main() {
         }
     });
 
+    let name_items = items.iter().map(|(name, _, _)| {
+        let ident = format_ident!("{}", name);
+        quote! {
+            Lucide::#ident => #name
+        }
+    });
+
     // generate code
     let code = quote! {
 
@@ -62,6 +69,17 @@ fn main() {
                     #variants
                 ),*
             ];
+
+            ///
+            /// Lucide icon name
+            ///
+            pub fn name(&self) -> &'static str {
+                match self {
+                   #(
+                        #name_items
+                    ),*
+                }
+            }
 
             ///
             /// Lucide font for iced
