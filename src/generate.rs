@@ -3,8 +3,8 @@ use serde::Deserialize;
 use std::collections::BTreeMap;
 
 fn main() {
-    let version = "0.460.0";
-    let bytes = include_bytes!("../lucide-info.json");
+    let version = "0.536.0";
+    let bytes = include_bytes!("../data/info.json");
     let icons = serde_json::from_slice::<BTreeMap<String, Icon>>(bytes).unwrap();
     let items = icons
         .into_iter()
@@ -81,7 +81,7 @@ fn main() {
             ///
             #[cfg(feature = "data")]
             pub const fn font_data() -> &'static [u8] {
-                include_bytes!("../lucide.ttf")
+                include_bytes!("../data/lucide.ttf")
             }
         }
 
