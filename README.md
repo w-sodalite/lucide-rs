@@ -5,7 +5,7 @@
 
 Provide [lucide](https://lucide.dev/icons/) icon code point and font data for rust!
 
-Lucide current version: `0.460.0`
+Lucide current version: `0.536.0`
 
 ## Licence
 
