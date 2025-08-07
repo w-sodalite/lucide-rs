@@ -35,3 +35,8 @@ consolidate-commits = true
 pre-release-commit-message = "Release {{version}}"
 tag-name = "v{{version}}"
 allow-branch = ["main"]
+
+[[example]]
+name = "preview"
+path = "examples/preview.rs"
+required-features = ["iced", "data"]
